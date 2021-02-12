@@ -25,6 +25,11 @@ body {
     display: flex;
 }
 
+#target-date {
+    overflow: hidden;
+    height: 30px;
+}
+
 .block1 .target-date-selecter-container {
     margin-left: 20px;
 }
@@ -92,6 +97,7 @@ body {
     width: calc(100% - 40px);
     display: flex;
     border: 1px solid #BDBDBD;
+    /* padding-bottom: 10px; */
 }
 
 .block2 .left-block {
@@ -104,6 +110,8 @@ body {
     width: 100%;
     position: relative;
     height: 40px;
+    background-color: #F2F2F2;
+
 }
 
 .block2 .left-block .header .column {
@@ -137,6 +145,10 @@ body {
     height: 40px;
     border-top: 1px solid #BDBDBD;
     position: relative;
+}
+
+.block2 .left-block .body .time-entry-description-container:last-of-type {
+    border-bottom: 1px solid #BDBDBD;
 }
 
 .block2 .left-block .body .time-entry-description-container .column {
@@ -182,6 +194,7 @@ body {
 .block2 .right-block .scrollable-block .header {
     height: 40px;
     position: relative;
+    background-color: #F2F2F2;
 }
 
 .block2 .right-block .scrollable-block .header .time {
@@ -292,6 +305,10 @@ body {
     border-top: 1px solid #BDBDBD;
 }
 
+.block2 .right-block .scrollable-block .body .time-entry-container:last-of-type {
+    border-bottom: 1px solid #BDBDBD;
+}
+
 .block2 .right-block .scrollable-block .body .time-entry-container:nth-of-type(n + 2) {}
 
 .block2 .right-block .scrollable-block .body .time-entry-container {
@@ -300,11 +317,27 @@ body {
 }
 
 .block2 .right-block .scrollable-block .body .time-entry-container .time-entry {
-    background-color: #EB5757;
+    background-color: #BDBDBD;
     height: calc(40px - 2px);
     width: 163px;
     position: absolute;
     top: 0px;
     left: 20px;
     border-radius: 5px;
+}
+
+#workspace_id {
+    border: 1px solid #BDBDBD;
+    background-color: white;
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 500px;
+}
+
+#api_token {
+    border: 1px solid #BDBDBD;
+    background-color: white;
+    margin-top: 5px;
+    margin-left: 20px;
+    width: 500px;
 }
