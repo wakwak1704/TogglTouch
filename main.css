@@ -28,6 +28,7 @@ body {
 #target-date {
     overflow: hidden;
     height: 30px;
+    color: #4F4F4F;
 }
 
 .block1 .target-date-selecter-container {
@@ -188,6 +189,7 @@ body {
 
 .block2 .right-block .scrollable-block {
     width: 2440px;
+    padding-bottom: 14px;
     /* background-color: orange; */
 }
 
@@ -340,4 +342,106 @@ body {
     margin-top: 5px;
     margin-left: 20px;
     width: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+.block2 .right-block .scrollable-block .create-time-entry-area .time-entry-container {
+    height: 40x;
+    width: 2440px;
+    border-top: 1px solid #BDBDBD;
+}
+
+.block2 .right-block .scrollable-block .create-time-entry-area .time-entry-container:last-of-type {
+    border-bottom: 1px solid #BDBDBD;
+}
+
+.block2 .right-block .scrollable-block .create-time-entry-area .time-entry-container:nth-of-type(n + 2) {}
+
+.block2 .right-block .scrollable-block .create-time-entry-area .time-entry-container {
+    position: relative;
+    height: 40px;
+}
+
+.block2 .right-block .scrollable-block .create-time-entry-area.time-entry-container .time-entry {
+    background-color: #BDBDBD;
+    height: calc(40px - 2px);
+    width: 163px;
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    border-radius: 5px;
+}
+
+
+
+.block2 .left-block .create-time-entry-header-area .time-entry-description-container {
+    height: 40px;
+    border-top: 1px solid #BDBDBD;
+    position: relative;
+}
+
+.block2 .left-block .create-time-entry-header-area .time-entry-description-container:last-of-type {
+    border-bottom: 1px solid #BDBDBD;
+}
+
+.block2 .left-block .create-time-entry-header-area .time-entry-description-container .column {
+    height: 40px;
+    position: absolute;
+    top: 0px;
+    overflow: hidden;
+    width: 200px;
+}
+
+.block2 .left-block .create-time-entry-header-area .time-entry-description-container .column:nth-of-type(n + 2) {
+    border-left: 1px solid #BDBDBD;
+}
+
+.block2 .left-block .create-time-entry-header-area .time-entry-description-container .column:nth-of-type(2) {
+    left: 200px;
+}
+
+.block2 .left-block .create-time-entry-header-area .time-entry-description-container .column:nth-of-type(3) {
+    left: 400px;
+}
+
+.block2 .left-block .create-time-entry-header-area .time-entry-description-container .column span {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    color: #4F4F4F;
+}
+
+#create-time-entry-project-description {
+    border: 1px solid #BDBDBD;
+    height: 30px;
+    width: calc(100% - 10px);
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+#create-time-entry-project {
+    border: 1px solid #BDBDBD;
+    height: 30px;
+    width: calc(100% - 10px);
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+#create-time-entry-tags {
+    border: 1px solid #BDBDBD;
+    height: 30px;
+    width: calc(100% - 10px);
+    position: absolute;
+    left: 5px;
+    top: 5px;
 }

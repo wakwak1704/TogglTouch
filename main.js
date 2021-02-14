@@ -1,18 +1,39 @@
 $(function () {
+    function getDisplayDateFromDate(date) {
+        return date.toString().replace(/\s[0-9]{4}.*/, '');
+    }
+    $('.time-entry').on({
+        'mouseenter': function (obj) {
+            console.log('enter');
+        },
+        'mouseleave': function (obj) {
+            console.log('leave');
+        }
+    });
+
+    $('.time-entry').on('click', function(obj) {
+        console.log('click');
+    });
+    
+
     const today = Date();
-    $('#target-date').text(today.toString());
+    $('#target-date').text(getDisplayDateFromDate(today));
+    $('#target-date').data('target-date', today.toString())
+
 
     $('#one-day-ago').on('click', function () {
-        const targetDay = new Date($('#target-date').text());
+        const targetDay = new Date($('#target-date').data('target-date'));
         targetDay.setDate(targetDay.getDate() - 1);
-        $('#target-date').text(targetDay.toString());
+        $('#target-date').text(getDisplayDateFromDate(targetDay));
+        $('#target-date').data('target-date', targetDay.toString())
         displayTimeEntries();
     });
 
     $('#one-day-later').on('click', function () {
-        const targetDay = new Date($('#target-date').text());
+        const targetDay = new Date($('#target-date').data('target-date'));
         targetDay.setDate(targetDay.getDate() + 1);
-        $('#target-date').text(targetDay.toString());
+        $('#target-date').text(getDisplayDateFromDate(targetDay));
+        $('#target-date').data('target-date', targetDay.toString())
         displayTimeEntries();
     });
     displayTimeEntries();
@@ -23,9 +44,9 @@ $(function () {
 
         $('#time-entry-description-area').empty();
         $('#time-entry-area').empty();
-        const targetDate = new Date($('#target-date').text());
+        const targetDate = new Date($('#target-date').data('target-date'));
         const targetDateStr = targetDate.getFullYear() + '-' + (targetDate.getMonth() + 1) + '-' + targetDate.getDate();
-        console.log(targetDateStr);
+        console.log("GET https://api.track.toggl.com/reports/api/v2/details");
         $.ajax({
             url: 'https://api.track.toggl.com/reports/api/v2/details',
             type: 'get',
@@ -40,6 +61,13 @@ $(function () {
             },
             dataType: 'json',
         }).done(function (data) {
+            const totalGrand = data.total_grand
+            $('#total-grand').empty();
+            if(totalGrand) {
+                $('#total-grand').append('<span>Total</span><span>' + totalGrand + '</span>');
+            }
+
+            console.log(data);
             const timeEntries = data.data.sort((timeEntryA, timeEntryB) => {
                 return new Date(timeEntryA.start).getTime() - new Date(timeEntryB.start).getTime();
             });

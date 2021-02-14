@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
     <title>TogglTouch</title>
     <link rel="stylesheet" type="text/css" href="./main.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./sec.js"></script>
     <script type="text/javascript" src="./main.js"></script>
 </head>
@@ -29,9 +30,9 @@
                 <button class="one-day-later" id="one-day-later"></button>
             </div>
         </div>
-        <div class="total-time">
+        <div class="total-time" id="total-grand">
             <span>Total</span>
-            <span>11:23</span>
+            <span>00:00</span>
         </div>
     </div>
     <div class="block2">
@@ -45,6 +46,19 @@
                 </div>
                 <div class="column">
                     <span>Tags</span>
+                </div>
+            </div>
+            <div class="create-time-entry-header-area">
+                <div class="time-entry-description-container">
+                    <div class="description column">
+                        <input type="text" id="create-time-entry-project-description">
+                    </div>
+                    <div class="project column">
+                        <select id="create-time-entry-project"></select>
+                    </div>
+                    <div class="tags column">
+                        <input id="create-time-entry-tags" type="text">
+                    </div>
                 </div>
             </div>
             <div class="body" id="time-entry-description-area">
@@ -205,6 +219,12 @@
                     <span class="time">21:00</span>
                     <span class="time">22:00</span>
                     <span class="time">23:00</span>
+                </div>
+                <div class="create-time-entry-area">
+                    <div class="time-entry-container">
+                        <div class="time-entry">
+                        </div>
+                    </div>
                 </div>
                 <div class="body" id="time-entry-area">
                     <!-- <div class="time-entry-container">
