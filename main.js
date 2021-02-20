@@ -85,21 +85,21 @@ $(function () {
                 const left = offset + start.getHours() * 100 + Math.floor(start.getMinutes() * 100 / 60);
                 const duration = element.dur;
                 const width = Math.floor(duration * 100 / (1000 * 60 * 60));
-                // if(element.pid) {
-                //     $.ajax({
-                //         url: 'https://api.track.toggl.com/api/v8/projects/' + element.pid,
-                //         type: 'get',
-                //         beforeSend: function (xhr) {
-                //             xhr.setRequestHeader("Authorization", "Basic " + btoa(api_token + ":" + 'api_token'));
-                //         },
-                //         dataType: 'json',
-                //     });
-                //     // .done(function(data) {
-                //     //     console.log('success');
-                //     // }).failse(function() {
-                //     //     console.log('fail');
-                //     // });
-                // }
+                if(element.pid) {
+                    $.ajax({
+                        url: 'https://api.track.toggl.com/api/v8/projects/' + element.pid,
+                        type: 'get',
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("Authorization", "Basic " + btoa(api_token + ":" + 'api_token'));
+                        },
+                        dataType: 'json',
+                    })
+                    .done(function(data) {
+                        console.log('projects :', data);
+                    }).fail(function() {
+                        console.log('fail');
+                    });
+                }
                 $('#time-entry-description-area').append('<div class="time-entry-description-container"><div class="description column"><span>' + description + '<span></div><div class="project column"><span>' + project + '</span></div><div class="tags column"><div class="tag"><span>' + tagsStr + '<span></div></div></div>');
                 $('#time-entry-area').append('<div class="time-entry-container"><div class="time-entry" data-time-entry-id="' + id + '"></div></div>');
                 $('div[data-time-entry-id="' + id + '"]').css('left', left).css('width', width);
